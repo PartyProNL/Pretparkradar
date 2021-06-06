@@ -1,6 +1,6 @@
 const init = async () => {
     //getData();
-    data = getData2();
+    let data = await getData2();
     getLocation();
 
     console.log("test");
@@ -21,19 +21,19 @@ async function getData() {
         }
     }
 
-    request.open("GET", "https://api.buienradar.nl/data/public/2.0/jsonfeed", false);
+    request.open("GET", "https://data.buienradar.nl/2.0/feed/json", false);
     request.send();
 }
 
 async function getData2() {
-    let temp = await fetch("https://api.buienradar.nl/data/public/2.0/jsonfeed")
+    let temp = await fetch("https://data.buienradar.nl/2.0/feed/json")
     .then((x) => {
         return x.json()
     })
     .catch((error) => {
         console.error(error)
     })
-    return null;
+    return temp;
 }
 
 function getLocation() {
