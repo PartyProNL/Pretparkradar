@@ -1,31 +1,14 @@
 const init = async () => {
-    //getData();
-    let data = await getData2();
+    let data = await getData();
     getLocation();
 
-    console.log("test");
     console.log(data);
 }
 
-var data;
 var currentLat;
 var currentLon;
 
 async function getData() {
-    var request = new XMLHttpRequest();
-
-    request.onreadystatechange = () => {
-        if(this.readyState === 4 && this.status === 200) {
-            data = JSON.parse(this.responseText);
-            console.log("Loaded Buienradar data, here it is: " + data);
-        }
-    }
-
-    request.open("GET", "https://data.buienradar.nl/2.0/feed/json", false);
-    request.send();
-}
-
-async function getData2() {
     let temp = await fetch("https://data.buienradar.nl/2.0/feed/json")
     .then((x) => {
         return x.json()
