@@ -1,18 +1,24 @@
 const init = async () => {
-    let data = await getData();
+    data = await getData();
     navigator.geolocation.getCurrentPosition(getLocation);
 
     console.log(data);
     console.log(data.forecast.weatherreport.summary);
+    console.log(getNearestWeatherStation().stationname)
 
     navigator.geolocation.getCurrentPosition(showPosition);
 
     setTimeout(function() {
         console.log(cityName)
     }, 3000)
+
+    // ALS HET KAN DE VARIABELEN CURRENTLAT & CURRENTLON INITIALISEREN
 }
 
+var data = null;
 var cityName = null;
+var currentLat = null;
+var currentLon = null;
 
 async function getData() {
     let temp = await fetch("https://data.buienradar.nl/2.0/feed/json")
@@ -64,8 +70,45 @@ async function showPosition(position) {
     " Longitude: " + position.coords.longitude);
 
     let locData = await getCurrentLocationData(position.coords.latitude, position.coords.longitude);
-    //console.log(getCurrentLocation(locData))
     cityName = getCurrentLocation(locData);
+}
+
+function getNearestWeatherStation() {
+    weerstations = data.actual.stationmeasurements;
+
+    var dichtbij;
+    var afstand = 1000;
+
+    for (var weerstation in weerstations) {
+        if (weerstations.hasOwnProperty(weerstation)) {
+            tempAfstand = getDistanceFromLatLonInKm(weerstations[weerstation].lat, weerstations[weerstation].lon, currentLat, currentLon);
+
+            if(afstand > tempAfstand) {
+                afstand = tempAfstand;
+                dichtbij = weerstations[weerstation];
+            }
+        }
+    }
+
+    return dichtbij;
+}
+
+function getDistanceFromLatLonInKm(lat1,lon1,lat2,lon2) {
+    var R = 6371;
+    var dLat = deg2rad(lat2-lat1);
+    var dLon = deg2rad(lon2-lon1);
+    var a =
+      Math.sin(dLat/2) * Math.sin(dLat/2) +
+      Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) *
+      Math.sin(dLon/2) * Math.sin(dLon/2)
+      ;
+    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+    var d = R * c;
+    return d;
+}
+
+function deg2rad(deg) {
+    return deg * (Math.PI/180);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
