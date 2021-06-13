@@ -1,12 +1,25 @@
+* {
+  margin: 0;
+}
+
 body {
     background-color: #f4f4f4;
-    margin: 0;
+    margin-left: 5%;
+    margin-right: 5%;
     height: 100%;
+}
+
+
+
+html{
+  background: url(../Micalanious/River-Backgrounds-23-1920-x-1200.jpg) no-repeat fixed;
+  background-size: cover;
 }
 
 #header {
     background-color: white;
     height: 10%;
+
 }
 
 .dropdown {
@@ -18,7 +31,7 @@ body {
 
 
 .dropdown .dropbtn {
-  font-size: 17px;
+  font-size: 23px;
   border: none;
   outline: none;
   color: black;
@@ -79,12 +92,13 @@ background-color: #FAFAFF;
 color: black;
 }
 
-.logo {
-  position: absolute;
-  width: 75px;
-  height: 75px;
-  left: 15px;
-  top: 15px;
+.Logo {
+  float: left;
+  overflow: hidden;
+  background-color: White;
+  text-align: center;
+
+  height: 80px;
 }
 
 .Title {
@@ -96,4 +110,11 @@ color: black;
   text-align: center;
   padding: 14px 30px;
   height: 80px;
+}
+
+article {
+  margin-top: 50px;
+}
+
+.VoorpellingDag{
 }
