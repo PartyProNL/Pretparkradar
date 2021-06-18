@@ -180,7 +180,7 @@ h1{
   text-align: center;
 }
 
-.text {
+.GHtext {
   background-color: black;
   color: white;
   font-size: 16px;
@@ -189,4 +189,8 @@ h1{
 
 .Atom {
   float: right;
+}
+
+a {
+  color: white;
 }
