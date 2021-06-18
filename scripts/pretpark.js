@@ -1,9 +1,13 @@
 const init = async () => {
-    let pretparkId = GetURLParameter("id")
+    let pretparkId = test("id")
+    console.log(pretparkId)
     
-    registerPark("efteling", "Efteling", "../FOTOPATH HIER", "4")
+    registerPark("efteling", "Efteling", "img/efteling.jpg", "4")
     let park = getPark(pretparkId)
     console.log(park)
+
+    document.querySelector(".pretparkTitle").innerHTML = park.name
+    document.querySelector(".pretparkImage").src = park.imgPath
 }
 
 let parks = []
@@ -18,26 +22,16 @@ function registerPark(id, name, imgPath, weatherStationId) {
 }
 
 function getPark(id) {
-    for (var i = 0; i < arrayLength; i++) {
+    for (var i = 0; i < parks.length; i++) {
         if(parks[i].id == id) {
             return parks[i]
         }
     }
 }
 
-function GetURLParameter(sParam)
-{
-    var sPageURL = window.location.search.substring(1);
-    var sURLVariables = sPageURL.split('&');
-    for (var i = 0; i < sURLVariables.length; i++) 
-    {
-        var sParameterName = sURLVariables[i].split('=');
-        if (sParameterName[0] == sParam) 
-        {
-            return sParameterName[1];
-        }
-    }
-}​
+function test(id) {
+    return new URLSearchParams(window.location.search).get(id)
+}
 
 document.addEventListener("DOMContentLoaded", () => {
     init();

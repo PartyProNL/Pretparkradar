@@ -145,3 +145,27 @@ footer{
   padding-top: 20px;
   padding-bottom: 20px;
 }
+
+.pretparkDataContainer {
+  background-color: #FFFFFF;
+  width: 100%;
+  height: 40em;
+  box-shadow: 5px 5px #00000041;
+  border-radius: 10px;
+}
+
+.pretparkDataContainerLeft {
+  background-color: #FFFFFF;
+  width: 30%;
+  height: 100%;
+}
+
+.pretparkTitle {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  margin-top: 100px;
+}
+
+.pretparkImage {
+  width: 80%;
+}
