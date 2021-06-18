@@ -45,7 +45,12 @@
         </header>
 
         <article class="VoorspellingVandaag">
-          De voorspelling van vandaag.
+          De voorspelling van
+          <script>
+            var today = new Date();
+            var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+            document.getElementById("p1").innerHTML = dateTime;
+          </script>
         </article>
 
         <article class="VoorpellingDag">

@@ -19,6 +19,7 @@ var data = null;
 var cityName = null;
 var currentLat = null;
 var currentLon = null;
+var today = new Date();
 
 async function getData() {
     let temp = await fetch("https://data.buienradar.nl/2.0/feed/json")
@@ -66,7 +67,7 @@ function getCurrentLocation(stuff) {
 }
 
 async function showPosition(position) {
-    console.log("Latitude: " + position.coords.latitude + 
+    console.log("Latitude: " + position.coords.latitude +
     " Longitude: " + position.coords.longitude);
 
     let locData = await getCurrentLocationData(position.coords.latitude, position.coords.longitude);
