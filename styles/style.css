@@ -247,6 +247,20 @@ footer{
   font-style: italic;
 }
 
+.weerbericht {
+  margin-top: 13%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: normal;
+}
+
+.locatieInfo {
+  margin-left: 7%;
+  margin-top: 2%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: normal;
+  font-style: italic;
+}
+
 h1{
   margin-bottom: 10px;
 }

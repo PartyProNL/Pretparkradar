@@ -4,7 +4,7 @@ const init = async () => {
 
     console.log(data);
     console.log(data.forecast.weatherreport.summary);
-    console.log(getNearestWeatherStation().stationname)
+    console.log(getNearestWeatherStation())
 
     navigator.geolocation.getCurrentPosition(showPosition);
 
@@ -12,7 +12,27 @@ const init = async () => {
         console.log(cityName)
     }, 3000)
 
-    // ALS HET KAN DE VARIABELEN CURRENTLAT & CURRENTLON INITIALISEREN
+    var userWeatherStationId = 0
+
+    document.querySelector(".pretparkVoorspelling").innerHTML = data.actual.stationmeasurements[userWeatherStationId].weatherdescription
+    document.querySelector(".iconWind").innerHTML = data.actual.stationmeasurements[userWeatherStationId].windspeed + " km/h wind"
+    document.querySelector(".iconTemperature").innerHTML = data.actual.stationmeasurements[userWeatherStationId].temperature + " ºC"
+    document.querySelector(".iconRain").innerHTML = data.actual.stationmeasurements[userWeatherStationId].rainFallLastHour + "% neerslag"
+    document.querySelector(".iconTime").innerHTML = data.actual.stationmeasurements[userWeatherStationId].timestamp
+    document.querySelector(".weerbericht").innerHTML = data.forecast.weatherreport.summary
+    document.querySelector(".locatieInfo").innerHTML = "Deze info komt van weerstation " + data.actual.stationmeasurements[userWeatherStationId].stationname + ". Dit is als het goed is het dichtsbijzijnde weerstation van jouw locatie."
+
+    if(data.actual.stationmeasurements[userWeatherStationId].rainFallLastHour > 0) {
+        document.querySelector(".pretparkImage").src = "img/rain.jpg"
+    } else {
+        if(data.actual.stationmeasurements[userWeatherStationId].temperature < 0) {
+            document.querySelector(".pretparkImage").src = "img/snow.png"
+        } else if(data.actual.stationmeasurements[userWeatherStationId].temperature < 20) {
+            document.querySelector(".pretparkImage").src = "img/normal.jpg"
+        } else {
+            document.querySelector(".pretparkImage").src = "img/sunny.jpg"
+        }
+    }
 }
 
 var data = null;
