@@ -132,7 +132,7 @@ article {
 }
 
 footer{
-  background-color: white;
+  background-color: black;
   text-align: left;
   margin-top: 15px;
   color: black;
@@ -296,6 +296,6 @@ a {
   color: white;
 }
 
-.mail{
+mailto {
   color: black;
 }
