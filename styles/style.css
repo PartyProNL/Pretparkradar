@@ -117,19 +117,31 @@ article {
   background-color: white;
   margin-top: 10px;
   margin-right: 10px;
-  height: 200px;
-  width: 500px;
   float: left;
   align-self: center;
 }
 
 .VoorpellingDag{
+  width: 500px;
+  height: 200px;
+}
+
+.VoorspellingVandaag{
+  width: 100%;
+  height: 30%;
 }
 
 footer{
   text-align: left;
   padding-top: 10px;
   color: white;
-  position: fixed;
+  position: inherit;
   clear: both;
+}
+
+.About{
+  padding-right: 50px;
+  padding-left: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
