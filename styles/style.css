@@ -139,6 +139,7 @@ footer{
   width: 100%
   position: inherit;
   clear: both;
+  padding: 5px;
 }
 
 .About{
@@ -293,4 +294,8 @@ h1{
 
 a {
   color: white;
+}
+
+.mail{
+  color: black;
 }
