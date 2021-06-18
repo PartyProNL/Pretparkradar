@@ -4,6 +4,11 @@ const init = async () => {
     console.log(pretparkId)
     
     registerPark("efteling", "Efteling", "De Efteling is een pretpark in Kaatsheuvel, Brabant. Het is een van de grootste pretparken van Nederland, bekend van onder meer attracties als De Python, Baron 1898 en Droomvlucht.", "img/efteling.jpg", "4")
+    registerPark("walibi", "Walibi Holland", "Walibi Holland is een pretpark gelegen in Biddinghuizen, Flevoland. Walibi Holland heeft heel wat namen gehad, zoals Walibi World, Six Flags Holland en Flevohof. Tegenwoordig kan je er allemaal grote achtbanen vinden voor thrillseekers.", "img/walibi.jpg", "4")
+    registerPark("duinrell", "Duinrell", "Duinrell is een klein pretpark gelegen in de Wassenaar in de duinen. Duinrell is bekend van onder andere het Tikibad en de achtbaan Falcon. De OSG gaat hier jaarlijks naartoe.", "img/duinrell.jpg", "4")
+    registerPark("toverland", "Toverland", "Toverland is een best nieuw park gelegen in Sevenum in Limburg. Het park is begonnen met een indoorhal, maar heeft tegenwoordig ook allemaal grote achtbanen, zoals Fenix en Troy.", "img/toverland.jpg", "4")
+    registerPark("slagharen", "Slagharen", "Slagharen (voorheen ook wel bekend als Ponypark Slagharen) is een pretpark gelegen in Overijssel. Het heeft meerdere achtbanen, heel wat oude kermisattracties en een waterpark.", "img/slagharen.jpeg", "4")
+    registerPark("hellendoorn", "Hellendoorn", "Avonturenpark Hellendoorn is een van de oudste pretparken in Nederland. Het heeft tegenwoordig een paar achtbanen en een slidepark. (Een slidepark is een waterpark met alleen maar glijbanen)", "img/hellendoorn.jpg", "4")
     let park = getPark(pretparkId)
     console.log(park)
 
